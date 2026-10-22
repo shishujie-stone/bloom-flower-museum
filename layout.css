@@ -1,0 +1,117 @@
+/* The exhibition and its flower picker share one workspace. */
+body{padding-bottom:76px}
+.header{height:90px}
+.intro{padding:26px 0 24px}
+.title-row h1{font-size:36px;margin:16px 0 4px}
+.title-row>p{margin-top:10px}
+.exhibition{grid-template-columns:146px minmax(0,1fr) 260px;gap:26px;align-items:start}
+.catalog{position:sticky;top:20px;padding:0;align-self:start;min-width:0;max-height:calc(100dvh - 40px);overflow-y:auto;scrollbar-width:thin;scrollbar-color:#ccd5bf transparent}
+.catalog-head{display:block;margin:0 0 14px;padding:3px 3px 0}
+.catalog-head h2{font-size:17px;margin:0 0 8px}
+.catalog-head #gallery-status{display:block;font-size:10px}
+.catalog-head .catalog-hint{display:none}
+.flower-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;overflow:visible;margin:0;padding:2px 3px 6px;scroll-snap-type:none}
+.flower-gallery button{min-width:0;width:100%;padding:6px 3px 7px;border:1px solid #e8ecdf;background:#ffffff73}
+.flower-gallery button>img{height:48px;max-height:48px;margin:0 auto 5px;object-fit:contain}
+.flower-gallery button>span{font-size:12px;letter-spacing:.08em}
+.flower-gallery button.active{border-color:#99aa81;box-shadow:0 2px 0 #b2c098;background:#fff}
+.stage{scroll-margin-top:20px}
+.specimen-info .info-heading h2{font-size:44px}
+
+/* Music stays within reach without occupying the exhibition's vertical space. */
+.music-dock{position:fixed;right:24px;bottom:24px;z-index:30}
+.music-dock-bar{display:flex;align-items:center;gap:8px;padding:5px 14px 5px 5px;border:1px solid #d5dec8;border-radius:28px;background:#fafbf5f5;box-shadow:0 4px 24px #344b3812;backdrop-filter:blur(12px)}
+.music-dock-bar .music-play{width:34px;height:34px;font-size:14px;background:#f1f5e8;border-color:#c0cdae;flex-shrink:0}
+.music-dock-toggle{padding:8px 0;font-family:LocalSong,'Songti SC',serif;font-size:13px;letter-spacing:.08em;color:#657c50;display:flex;align-items:center;gap:10px}
+.music-dock-toggle>span{font:12px system-ui;color:#96a685;transition:transform .2s}
+.music-dock-toggle[aria-expanded=true]>span{transform:rotate(180deg)}
+.music-dock.is-playing .music-dock-bar{border-color:#aaba91}
+.music-panel{position:absolute;right:0;bottom:58px;display:grid;grid-template-columns:1fr auto;gap:17px;width:300px;padding:24px;border:1px solid #d7e0ca;border-radius:5px;background:#fafbf6;box-shadow:0 10px 40px #2d412921;max-height:calc(100dvh - 110px);overflow:auto}
+.music-panel .music-caption{grid-column:1/-1;padding-right:20px}
+.music-panel .music-caption h2{font-size:22px;margin:6px 0 7px}
+.music-panel .music-caption p{font-size:10px;line-height:1.7}
+.music-panel .track-select{grid-column:1/-1;padding:12px 0;border-block:1px solid #e2e8d8}
+.music-panel .music-volume{grid-column:1/-1;grid-row:auto;padding:0;gap:10px;font-size:11px}
+.music-panel .music-volume input[type=range]{flex:1;min-width:0;width:auto;max-width:none}
+.music-panel .music-volume output{font-size:10px}
+.music-panel>.text-button{grid-column:1/-1;justify-self:start;font-size:10px}
+.music-panel .music-info{grid-column:1/-1;grid-row:auto;font-size:10px;padding-top:12px}
+.music-close{position:absolute;top:9px;right:12px;font-size:23px;color:#91a17e;line-height:1;padding:4px}
+
+@media(min-width:1500px){.exhibition{grid-template-columns:158px minmax(0,1fr) 285px;gap:30px}.flower-gallery button>img{height:54px;max-height:54px}.flower-gallery button{padding-block:8px}.catalog-head{margin-bottom:16px}}
+@media(max-width:1179px){
+  .exhibition{grid-template-columns:minmax(0,1fr) 250px;gap:18px 28px}
+  .catalog{grid-column:1/-1;top:0;z-index:12;max-height:none;overflow:visible;padding:10px 0 0;background:#f8f8f3f2;backdrop-filter:blur(12px);border-bottom:1px solid #dde5d1}
+  .catalog-head{display:flex;align-items:baseline;gap:13px;margin:0 0 6px;padding:0 2px}
+  .catalog-head h2{font-size:13px;margin:0}
+  .catalog-head #gallery-status{font-size:9px}
+  .catalog-head .catalog-hint{display:block;font-size:8px;margin-left:auto}
+  .flower-gallery{display:flex;gap:7px;overflow-x:auto;overscroll-behavior-x:contain;margin:0;padding:2px 2px 9px;scroll-snap-type:x proximity}
+  .flower-gallery button{flex:1 0 61px;min-width:61px;width:auto;padding:4px 3px 5px;scroll-snap-align:center}
+  .flower-gallery button>img{height:40px;max-height:40px;margin-bottom:3px}
+  .flower-gallery button>span{font-size:11px}
+  .stage{scroll-margin-top:118px}
+}
+@media(max-width:720px){
+  .header{height:76px}
+  .intro{padding:22px 0 18px}
+  .title-row h1{font-size:27px;margin:12px 0 0;line-height:1.5}
+  .exhibition{grid-template-columns:minmax(0,1fr);gap:16px}
+  .catalog{padding-top:9px}
+  .catalog-head{margin-bottom:6px;gap:10px}
+  .catalog-head h2{font-size:13px}
+  .catalog-head .catalog-hint{display:none}
+  .flower-gallery button{flex:0 0 56px;min-width:56px}
+  .flower-gallery button>img{height:36px;max-height:36px}
+  .stage{height:430px;scroll-margin-top:112px}
+  .specimen-info .info-heading h2{font-size:39px}
+  .music-dock{right:14px;bottom:max(14px,env(safe-area-inset-bottom))}
+  .music-dock-bar{padding:4px 12px 4px 4px;gap:6px}
+  .music-dock-bar .music-play{height:32px;width:32px}
+  .music-dock-toggle{font-size:12px;gap:7px}
+  .music-panel{width:min(300px,calc(100vw - 28px));bottom:54px;padding:22px}
+}
+@media(max-height:700px) and (min-width:1180px){.flower-gallery button>img{height:36px;max-height:36px}.flower-gallery button{padding-block:4px}.catalog-head{margin-bottom:10px}}
+
+/* One quiet courtyard atmosphere for both the full flower and its 3D study. */
+.stage{
+  --scene-mid:#f3f4ed;--scene-edge:#e3e9de;
+  --scene-art:url('./assets/narcissus-courtyard.svg');
+  background:radial-gradient(ellipse at 50% 43%,#fdfdf8 0%,var(--scene-mid) 48%,var(--scene-edge) 100%);
+  isolation:isolate;
+}
+.stage::before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:var(--scene-art) center/100% 100% no-repeat;
+}
+.stage::after{
+  content:"";position:absolute;inset:0;z-index:3;pointer-events:none;opacity:.13;
+  background:url('./assets/paper-grain.svg') repeat;mix-blend-mode:multiply;
+}
+/* White image grounds optically merge with the pale backdrop, without cropping
+   or modifying the original flower assets. The near-white centre preserves colour. */
+.branch-view{mix-blend-mode:multiply}
+.model-view{background:transparent}
+#canvas-container{position:relative;z-index:0}
+.model-instructions{z-index:2;color:#738469}
+#model-loading,.model-error{background:radial-gradient(ellipse at 50% 43%,#fdfdf8,var(--scene-mid) 48%,var(--scene-edge))}
+.stage[data-flower="plum-blossom"]{--scene-mid:#f4f0ed;--scene-edge:#e7e5e3;--scene-art:url('./assets/courtyard-branches.svg')}
+.stage[data-flower="peony"]{--scene-mid:#f5f1ed;--scene-edge:#ebe4dd;--scene-art:url('./assets/courtyard-round-window.svg')}
+.stage[data-flower="chrysanthemum"]{--scene-mid:#f4f2e7;--scene-edge:#e9e4d4;--scene-art:url('./assets/courtyard-bamboo.svg')}
+.stage[data-flower="orchid"]{--scene-mid:#eef3ed;--scene-edge:#dfe8df;--scene-art:url('./assets/courtyard-bamboo.svg')}
+.stage[data-flower="china-rose"]{--scene-mid:#f5efee;--scene-edge:#ece2e0;--scene-art:url('./assets/courtyard-round-window.svg')}
+.stage[data-flower="azalea"]{--scene-mid:#f1f2ec;--scene-edge:#e3e7dc;--scene-art:url('./assets/courtyard-branches.svg')}
+.stage[data-flower="camellia"]{--scene-mid:#eef1ec;--scene-edge:#dee6df;--scene-art:url('./assets/courtyard-round-window.svg')}
+.stage[data-flower="lotus"]{--scene-mid:#eef3f0;--scene-edge:#dee9e5;--scene-art:url('./assets/courtyard-water.svg')}
+.stage[data-flower="osmanthus"]{--scene-mid:#f4f2e8;--scene-edge:#e9e5d5;--scene-art:url('./assets/courtyard-branches.svg')}
+.stage[data-flower="narcissus"]{--scene-mid:#eef2e5;--scene-edge:#e1e9dc}
+@media(max-width:720px){.stage::before{opacity:.75}}
+
+/* Cap viewport-relative gutters so external monitors do not shrink the stage. */
+@media(min-width:721px){
+  main,.header{padding-inline:min(5vw,72px)}
+}
+@media(min-width:1500px){
+  main{max-width:1680px}
+  .header{max-width:1680px}
+}

@@ -1,0 +1,113 @@
+{
+  "plum-blossom": {
+    "src": "assets/artworks/plum-blossom.jpg",
+    "imageUrl": "https://img.dpm.org.cn/Uploads/Picture/2018/10/30/s5bd80241c1966.jpg",
+    "sourceUrl": "https://www.dpm.org.cn/collection/paint/234636.html",
+    "sourceName": "故宫博物院",
+    "credit": "图片来源：故宫博物院",
+    "displayNote": "馆方局部图；按比例展示，未裁切。",
+    "rights": "图像版权归故宫博物院，未标注开放许可。",
+    "sha256": "5916a180c0d64a78551b398a6cbd1cc6c9150e3e5a3eba548d474580f5a87a66",
+    "retrievedAt": "2026-10-22"
+  },
+  "peony": {
+    "src": "assets/artworks/peony.jpg",
+    "imageUrl": "https://img.dpm.org.cn/Uploads/Picture/dc/27635[1024].jpg",
+    "sourceUrl": "https://www.dpm.org.cn/collection/paint/229939.html",
+    "sourceName": "故宫博物院",
+    "credit": "图片来源：故宫博物院",
+    "displayNote": "馆方原图；按比例展示，未裁切。",
+    "rights": "图像版权归故宫博物院，未标注开放许可。",
+    "sha256": "2ab20184d3fc538765ee7d55245a22816445588277e9b46009ead4541d85c819",
+    "retrievedAt": "2026-10-22"
+  },
+  "chrysanthemum": {
+    "src": "assets/artworks/chrysanthemum.jpg",
+    "imageUrl": "https://ggzl-img.dpm.org.cn/ggbwg8/8e735f97b1774746b16309aa91418597.jpg",
+    "sourceUrl": "https://www.dpm.org.cn/collection/paint/370836.html",
+    "sourceName": "故宫博物院",
+    "credit": "图片来源：故宫博物院",
+    "displayNote": "馆方原图；按比例展示，未裁切。",
+    "rights": "图像版权归故宫博物院，未标注开放许可。",
+    "sha256": "6e82af068c48e9a5201eddb30fe9743ac8d988b9ea889b076ad9fff1ed711c66",
+    "retrievedAt": "2026-10-22"
+  },
+  "orchid": {
+    "src": "assets/artworks/orchid.jpg",
+    "imageUrl": "https://img.dpm.org.cn/Uploads/Picture/2017/03/31/s58de16b06f3a8.jpg",
+    "sourceUrl": "https://www.dpm.org.cn/collection/paint/228175.html",
+    "sourceName": "故宫博物院",
+    "credit": "图片来源：故宫博物院",
+    "displayNote": "馆方局部图；按比例展示，未裁切。",
+    "rights": "图像版权归故宫博物院，未标注开放许可。",
+    "sha256": "07931f6b5fbe122a934b96751e5a9ad873af575f91f031c793a0a7490cee5980",
+    "retrievedAt": "2026-10-22"
+  },
+  "lotus": {
+    "src": "assets/artworks/lotus.jpg",
+    "imageUrl": "https://img.dpm.org.cn/Uploads/Picture/dc/27569[1024].jpg",
+    "sourceUrl": "https://www.dpm.org.cn/collection/paint/229940.html",
+    "sourceName": "故宫博物院",
+    "credit": "图片来源：故宫博物院",
+    "displayNote": "馆方原图；按比例展示，未裁切。",
+    "rights": "图像版权归故宫博物院，未标注开放许可。",
+    "sha256": "49432c260af914a91f7c00ae9772e50d73b4eeee1bab9ce3f0c66ca33c8ab05b",
+    "retrievedAt": "2026-10-22"
+  },
+  "osmanthus": {
+    "src": "assets/artworks/osmanthus.jpg",
+    "imageUrl": "https://img.dpm.org.cn/Uploads/Picture/dc/53807[1024].jpg",
+    "sourceUrl": "https://www.dpm.org.cn/collection/paint/233265.html",
+    "sourceName": "故宫博物院",
+    "credit": "图片来源：故宫博物院",
+    "displayNote": "馆方原图；按比例展示，未裁切。",
+    "rights": "图像版权归故宫博物院，未标注开放许可。",
+    "sha256": "14fcb19b56c072592a9cf907da8681d15f447e72ffc2a47fd52fc93167738a11",
+    "retrievedAt": "2026-10-22"
+  },
+  "narcissus": {
+    "src": "assets/artworks/narcissus.jpg",
+    "imageUrl": "https://img.dpm.org.cn/Uploads/Picture/dc/27584[1024].jpg",
+    "sourceUrl": "https://www.dpm.org.cn/collection/paint/229930.html",
+    "sourceName": "故宫博物院",
+    "credit": "图片来源：故宫博物院",
+    "displayNote": "馆方原图；按比例展示，未裁切。",
+    "rights": "图像版权归故宫博物院，未标注开放许可。",
+    "sha256": "167d16193759b73426256e86e2c600a77ddd36cdb38f430c6257f1f0d97edba8",
+    "retrievedAt": "2026-10-22"
+  },
+  "camellia": {
+    "src": "assets/artworks/camellia.jpg",
+    "imageUrl": "https://www.dpm.org.cn/static/image/wzqh/114_新00054661_全形_陈洪绶岁朝清供轴800.jpg",
+    "sourceUrl": "https://www.dpm.org.cn/subject_wanzi/",
+    "sourceName": "故宫博物院万紫千红专题",
+    "credit": "图片来源：故宫博物院“万紫千红”专题",
+    "displayNote": "馆方局部图；可见瓶中山茶、梅与竹。",
+    "rights": "图像版权归故宫博物院，未标注开放许可。",
+    "sha256": "df79f5c8db3d9f012f51dcf7e135f82ab43ad073723e0d6607ac4f5f2c091598",
+    "retrievedAt": "2026-10-22"
+  },
+  "china-rose": {
+    "src": "assets/artworks/china-rose.jpg",
+    "imageUrl": "https://www.dpm.org.cn/Uploads/File/2022/12/05/u638dac0ac0a2a.pdf",
+    "sourceUrl": "https://www.dpm.org.cn/Uploads/File/2022/12/05/u638dac0ac0a2a.pdf",
+    "sourceName": "故宫博物院《紫禁城》2022年第11期",
+    "credit": "图片来源：故宫博物院《紫禁城》2022年第11期，崔月姣《十月节令百花之月季》",
+    "displayNote": "PDF第2页内嵌图；按比例展示，未裁切。",
+    "rights": "图像版权归原来源机构及权利人，未标注开放许可。",
+    "sha256": "dfc4cf8d819192ec5dfa5136a07b4a9fd569150e6aa2f3a11b16772e3b942331",
+    "retrievedAt": "2026-10-22"
+  },
+  "azalea": {
+    "src": "assets/artworks/azalea.jpg",
+    "imageUrl": "https://digitalarchive.npm.gov.tw/Image/GetImage?imageId=2655244&randomCode=1491971781",
+    "sourceUrl": "https://digitalarchive.npm.gov.tw/Collection/Detail/8656?dep=P",
+    "sourceName": "国立故宫博物院（台北）典藏资料检索",
+    "credit": "图片来源：国立故宫博物院（台北），清钱维城《画四景花卉春景》册《杜鹃》",
+    "displayNote": "馆方低阶公开影像；保留原图色卡与文物编号。",
+    "rights": "低阶图像 CC0；图录文字 CC BY 4.0。",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha256": "31a22efa5e06e146cc1a10345bc8ba979314fcabf9a2c91939eba68289f8a7a8",
+    "retrievedAt": "2026-10-22"
+  }
+}

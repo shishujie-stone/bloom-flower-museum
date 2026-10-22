@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f8f3">
+  <meta name="description" content="BLOOM 中国名花花卉博物馆。十种传统名花，自由切换；放大观察、控制绽放、360度观赏，并对照真实摄影、诗文与文物。">
+  <title>BLOOM · 中国名花花卉博物馆</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23f8f8f3'/%3E%3Cg fill='%23dbad44'%3E%3Cellipse cx='32' cy='20' rx='9' ry='14'/%3E%3Cellipse cx='32' cy='44' rx='9' ry='14'/%3E%3Cellipse cx='20' cy='32' rx='14' ry='9'/%3E%3Cellipse cx='44' cy='32' rx='14' ry='9'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="gallery.css">
+  <link rel="stylesheet" href="interaction.css?v=gesture-hints-1">
+  <link rel="stylesheet" href="layout.css?v=responsive-monitors-1">
+<link rel="stylesheet" href="knowledge.css?v=sticky-flowers-1">
+<link rel="stylesheet" href="image-viewer.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+<link rel="stylesheet" href="flower-cursor.css?v=photo-2">
+</head>
+<body>
+<header class="header">
+  <a class="brand" href="#" aria-label="BLOOM 回到整体展示"><strong>BLOOM<span>✳</span></strong><small>中国名花花卉博物馆</small></a>
+  <nav aria-label="展馆导航"><span class="nav-current">名花展厅</span><a href="#story">名花知识</a><button id="about-button" type="button">关于本展</button></nav>
+  <span class="edition">桂花 · 交互首展 <i></i></span>
+</header>
+<main>
+
+  <section class="intro" aria-labelledby="page-title"><div class="eyebrow"><span>THE ART OF BLOOMING</span><span class="index">09 / 10</span></div><div class="title-row"><h1 id="page-title">一枝秋色<span>，</span>一朵初绽<span>。</span></h1><p>让目光慢下来，<br>看见一朵小花的世界。</p></div></section>
+  <section class="exhibition" aria-label="桂花互动展台">
+  <section class="catalog" aria-label="选择名花"><div class="catalog-head"><h2>十花入馆</h2><span id="gallery-status" aria-live="polite">桂花 · 9 / 10</span><span class="catalog-hint">选择一朵，慢慢看</span></div><div id="flower-gallery" class="flower-gallery" role="group" aria-label="十大名花切换"></div></section>
+    <div class="stage-column">
+      <div class="stage" id="stage">
+        <div class="stage-top"><span id="stage-label">01 — 花枝全貌</span><span class="specimen-tag" id="specimen-tag">AI 生成形象</span></div>
+        <div class="branch-view" id="branch-view"><button class="branch-button" id="branch-button" aria-label="点击桂花花枝，进入单朵放大观察"><img src="assets/osmanthus-branch.jpg" alt="白底金黄色桂花花枝，细小花簇生于深绿叶片之间" width="1200" height="1200"><span class="flower-hotspot"><span>＋</span><b>走近一朵</b></span></button></div>
+        <div class="model-view" id="model-view" hidden><div id="canvas-container"></div><div id="model-loading" role="status">正在准备一朵桂花…</div><div class="model-instructions" id="model-instructions">拖动旋转 · 滚轮或双指缩放</div><div class="model-error" id="model-error" hidden><p>此浏览器暂时无法显示三维花朵。</p><button id="error-back">返回花枝</button></div></div>
+        <span class="stage-watermark" aria-hidden="true">OSMANTHUS</span>
+        <div class="stage-bottom"><span class="scale-note" id="scale-note">花枝形象 · 点击进入单朵观察</span><button id="fullscreen-button" type="button" aria-label="全屏查看展台" title="全屏查看">⛶</button></div>
+      </div>
+      <div class="mode-bar"><div class="mode-tabs" role="group" aria-label="展示模式"><button id="branch-tab" class="active" aria-pressed="true"><span>01</span> 花枝全貌</button><button id="flower-tab" aria-pressed="false"><span>02</span> 单朵观察 <em>3D</em></button></div><button id="reset-button" class="reset-button" hidden>↺ 重置视角</button></div>
+      <section class="interaction-choice" id="interaction-choice" aria-label="互动方式" hidden>
+        <div class="interaction-tabs" role="group" aria-label="控制方式"><button id="mouse-mode" aria-pressed="true">鼠标互动</button><button id="gesture-mode" aria-pressed="false">手势互动 <span aria-hidden="true">✋</span></button></div><p id="control-hint">拖动旋转，滑动控制绽放。</p>
+        <section id="gesture-panel" class="gesture-panel" aria-label="手势赏花" hidden>
+          <div class="gesture-heading"><div><span class="eyebrow">BLOOM WITH YOUR HAND</span><h3>以手为引，让花绽放</h3></div><button id="gesture-back" class="text-button">返回鼠标 ↗</button></div>
+          <div class="gesture-instructions"><div><b>① 张开 · 合拢</b><span>控制花瓣开合</span><small>手掌朝向镜头，缓缓张合</small></div><div><b>② 捏住 · 移动</b><span>控制花朵旋转</span><small>拇指与食指捏合，左右旋转、上下俯仰</small></div></div><p id="gesture-action" class="gesture-action" role="status" aria-live="polite">准备好后，开启摄像头</p>
+          <div class="gesture-content"><div class="gesture-preview"><video id="gesture-video" width="640" height="480" autoplay muted playsinline disablepictureinpicture hidden></video><canvas id="gesture-overlay" width="640" height="480" aria-hidden="true"></canvas><div id="gesture-placeholder"><span aria-hidden="true">✋</span><span>把一只手，放进花的世界</span></div><span id="gesture-camera-state">摄像头尚未开启</span><button id="gesture-mini-stop" aria-label="关闭手势摄像头" title="关闭摄像头">×</button></div>
+          <div class="gesture-guidance"><p id="gesture-status" role="status">点击开启摄像头，再将一只手放入画面。</p><div class="camera-actions"><button id="gesture-start" class="camera-start">开启摄像头</button><button id="gesture-stop" class="camera-stop" hidden>关闭摄像头</button></div><div class="hand-progress"><label for="gesture-meter">随手绽放</label><output id="gesture-value">—</output><meter id="gesture-meter" min="0" max="1" value="1" aria-label="手势控制的绽放程度"></meter></div><p class="gesture-tip">保持光线充足，让完整手掌留在画面里。暂时拇指与食指捏合后，左右移动旋转、上下移动调整俯仰；旋转时花瓣保持开合程度。松开停止旋转，移开手保持花姿。</p></div></div>
+          <div class="gesture-calibration"><span>调整手感</span><button id="calibrate-closed" disabled>记住合拢</button><button id="calibrate-open" disabled>记住张开</button><button id="calibrate-reset">重置</button><p id="calibration-note">动作不够灵敏时，可以记住你的合拢与张开姿势。</p></div>
+          <p class="camera-privacy">画面仅在本地识别，不录制、不上传；退出手势模式或离开页面会关闭摄像头。</p>
+        </section>
+      </section>
+      <section class="bloom-controls" id="bloom-controls" aria-label="花朵开合控制" hidden><div class="play-row"><button id="play-button" class="play-button" aria-label="播放绽放动画">▶</button><div class="play-text"><b id="bloom-state">盛放</b><span id="bloom-description">四片花冠舒展，轻轻向外翻卷。</span></div><output for="bloom-range" id="bloom-value">100<span>%</span></output></div><input id="bloom-range" type="range" min="0" max="100" value="100" aria-label="绽放程度"><div class="range-labels"><span>含苞</span><span>初绽</span><span>盛放</span></div><div class="view-row"><div role="group" aria-label="快捷视角"><button data-view="front" class="selected" aria-pressed="true">正面</button><button data-view="side" aria-pressed="false">侧面</button><button data-view="back" aria-pressed="false">背面</button></div><button id="rotate-button" aria-pressed="false">↻ 自动旋转</button></div></section>
+    </div>
+    <aside class="specimen-info">
+      <div class="info-heading"><span class="eyebrow">FRAGRANCE OF AUTUMN</span><h2>桂花<span>木犀</span></h2><p class="latin">Osmanthus fragrans</p></div>
+      <p class="description">花虽细小，香却悠远。<br>簇生在叶腋间的点点金黄，<br>藏着中国人熟悉的秋天。</p>
+      <dl class="facts"><div><dt>形态</dt><dd>四裂花冠 · 叶腋簇生</dd></div><div><dt>观赏</dt><dd>从花枝走近单朵</dd></div><div><dt>本展</dt><dd>金黄色花型 · 放大观察</dd></div></dl>
+      <div class="reference"><div class="reference-head"><h3>自然中的桂花</h3><span>真实摄影</span></div><button type="button" class="reference-photo" aria-haspopup="dialog" aria-label="放大真实桂花照片"><img src="assets/osmanthus-reference.jpg" alt="真实桂花摄影：细小浅黄花朵密集生长在枝叶之间" width="1280" height="960"><span>点击放大 ⤢</span></button><p class="reference-caption">实拍为浅色花型，用于对照花簇与枝叶形态。</p><p class="credit"><a href="https://commons.wikimedia.org/wiki/File:Osmanthus_fragrans.jpg" target="_blank" rel="noopener">Juni / Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a><br>照片未修改；页面中按展示框裁切。</p></div>
+      <button class="observe-button" id="observe-button">放大，看看这一朵 <span>↗</span></button>
+    </aside>
+  </section>
+  <section class="knowledge" id="story" aria-labelledby="knowledge-title">
+    <header class="knowledge-heading">
+      <div><span class="knowledge-kicker">从赏花到识花 · FLOWER KNOWLEDGE</span><h2 id="knowledge-title">名花知识馆</h2><p id="knowledge-lead">读懂桂花：循着诗词、历史与文物，认识花姿之外的文化。</p></div>
+      <span class="knowledge-chapter">文化与知识<br><b>03</b></span>
+    </header>
+    <div id="knowledge-flowers" class="knowledge-flowers" role="group" aria-label="选择要了解的名花"></div>
+    <div class="knowledge-grid">
+      <article class="knowledge-card poetry" aria-labelledby="poetry-title">
+        <div class="knowledge-card-label"><span>01</span><span>POETRY & MEANING</span></div>
+        <h3 id="poetry-title">诗词里的花</h3><p class="knowledge-question">古人怎样借花言志？</p>
+        <blockquote id="poem-lines">何须浅碧深红色，<br>自是花中第一流。</blockquote>
+        <p id="poem-author" class="knowledge-meta">宋 · 李清照《鹧鸪天·桂花》</p>
+        <div class="knowledge-reading"><span>读懂这一句</span><p id="poem-reading"></p></div>
+        <a class="knowledge-source" id="poem-source" target="_blank" rel="noopener">阅读诗词原文 <span aria-hidden="true">↗</span></a>
+      </article>
+      <article class="knowledge-card" aria-labelledby="history-title">
+        <div class="knowledge-card-label"><span>02</span><span>ROOTS & RECORDS</span></div>
+        <h3 id="history-title">历史中的花</h3><p class="knowledge-question">从文字记录，寻找赏花的来路。</p>
+        <p id="history-text" class="knowledge-body"></p>
+        <div class="knowledge-reading"><span>阅读线索</span><p id="history-reading"></p></div>
+        <a class="knowledge-source" id="history-link" target="_blank" rel="noopener">查阅历史资料 <span aria-hidden="true">↗</span></a>
+      </article>
+      <article class="knowledge-card artwork-card" aria-labelledby="art-title">
+        <div class="knowledge-card-label"><span>03</span><span>FLOWERS IN ART</span></div>
+        <h3 id="art-title">文物里的花</h3><p class="knowledge-question">从一件藏品，看花如何走入艺术。</p>
+        <div class="artwork-content">
+        <figure class="artwork-figure"><button type="button" id="artwork-image-link" class="artwork-image-link" aria-haspopup="dialog" aria-label="放大文物图片"><img id="artwork-image" loading="lazy" decoding="async" alt=""><span>点击放大 ⤢</span></button><figcaption><a id="artwork-image-source" target="_blank" rel="noopener"></a><span id="artwork-image-note"></span><span id="artwork-image-rights"></span></figcaption></figure>
+        <div class="artwork-description"><h4 id="artwork-title"></h4><p id="artwork-museum" class="knowledge-meta"></p><p id="artwork-note" class="knowledge-body"></p>
+        <div class="knowledge-reading"><span>带着问题看</span><p id="artwork-reading"></p></div>
+        <a class="knowledge-source" id="artwork-link" target="_blank" rel="noopener">查看文物出处 <span aria-hidden="true">↗</span></a></div></div>
+      </article>
+    </div>
+    <p class="knowledge-footnote">资料可溯源 · 诗词、历史与藏品均附出处；诗意读解为本展导读。</p>
+  </section>
+  <footer><span>BLOOM <small>中国名花花卉博物馆</small></span><p>整体形象为 AI 生成图；放大视图为形态简化的交互模型。开合为艺术演示，非实测生长记录。</p><a href="https://www.iplant.cn/fsz/info/Osmanthus%20fragrans" target="_blank" rel="noopener">植物资料 ↗</a></footer>
+</main>
+<dialog id="about-dialog"><button class="dialog-close" id="close-about" aria-label="关闭">×</button><span class="eyebrow">BLOOM · TEN FLOWERS</span><h2>十种名花，十种花姿</h2><p>这是中国传统十大名花的交互展厅。先看整体形象，再走近一朵花，控制绽放、旋转和缩放。菊花以头状花序为观察对象。</p><p>单朵模型不是由图片自动还原，也不是某一品种的精确扫描。各花型的展开动作经过艺术化处理，不代表真实开放速度或逐帧过程。不同花卉采用视觉归一化展示，不表示实物尺寸比例。</p><p>参考：<a id="dialog-source" href="https://www.iplant.cn/fsz/info/Osmanthus%20fragrans" target="_blank" rel="noopener">花卉资料来源</a>；真实摄影来源和许可见照片下方。</p><button id="dialog-observe" class="observe-button">开始观察 ↗</button></dialog>
+<aside class="music-dock" aria-label="赏花背景音乐">
+  <div class="music-dock-bar">
+    <button id="music-play" class="music-play" aria-label="播放赏花音乐" aria-pressed="false"><span aria-hidden="true">♫</span></button>
+    <button id="music-dock-toggle" class="music-dock-toggle" aria-label="展开音乐设置" aria-expanded="false" aria-controls="music-panel">花间听弦 <span aria-hidden="true">⌃</span></button>
+  </div>
+  <section class="music-panel" id="music-panel" aria-label="音乐设置" hidden>
+    <button id="music-close" class="music-close" aria-label="收起音乐设置">×</button>
+    <div class="music-caption"><span class="eyebrow">MUSIC AMONG FLOWERS</span><h2>花间听弦</h2><p id="music-status" role="status">轻启一曲，伴花而开</p></div>
+    <div class="track-select"><span class="music-track-name">Wuxia2</span><span class="music-instruments">古筝 · 琵琶</span></div>
+    <label class="music-volume">音量 <input id="music-volume" type="range" min="0" max="100" value="25" aria-label="音乐音量"><output id="music-volume-value" for="music-volume">25%</output></label>
+    <button id="music-info-button" class="text-button" aria-expanded="false" aria-controls="music-info">曲目与来源 ⌄</button>
+    <div id="music-info" class="music-info" hidden><p id="music-credit"></p><p id="music-note"></p><a id="music-source" target="_blank" rel="noopener">作品来源 ↗</a> · <a id="music-license" target="_blank" rel="noopener"></a></div>
+    <audio id="background-music" preload="none" loop></audio>
+  </section>
+</aside>
+<script type="module" src="app.js?v=gesture-hints-1"></script>
+</body>
+</html>

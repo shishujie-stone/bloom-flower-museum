@@ -1,0 +1,55 @@
+/* A distinct learning chapter after the interactive exhibition. */
+.knowledge{margin:72px 0 38px;padding:38px;background:#eaf0e5;border-top:3px solid #83966f;scroll-margin-top:24px}
+.knowledge-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:28px}
+.knowledge-kicker{font-size:10px;letter-spacing:.14em;color:#677d59;font-weight:600}
+.knowledge-heading h2{font:400 34px LocalSong,'Songti SC',serif;letter-spacing:.12em;margin:13px 0 12px;color:#304a36}
+.knowledge-heading p{font-size:12px;color:#738268;line-height:1.9;margin:0}
+.knowledge-chapter{text-align:right;font-size:10px;line-height:1.8;letter-spacing:.12em;color:#7c8d6d;white-space:nowrap}
+.knowledge-chapter b{font:italic 44px Georgia,serif;color:#acb99e;display:block;margin-top:5px}
+.knowledge-grid{display:grid;grid-template-columns:1.12fr 1fr 1fr;gap:18px;align-items:stretch}
+.knowledge-card{min-width:0;background:#fafbf6;border:1px solid #d9e2cf;padding:25px 24px 22px;display:flex;flex-direction:column}
+.knowledge-card-label{display:flex;align-items:center;justify-content:space-between;gap:12px;color:#8b997e;font-size:8px;letter-spacing:.12em}
+.knowledge-card-label>span:first-child{font:italic 22px Georgia,serif;color:#9eae8d;letter-spacing:0}
+.knowledge-card h3{font:400 22px LocalSong,'Songti SC',serif;margin:17px 0 8px;letter-spacing:.08em;color:#354f3b}
+.knowledge-question{font-size:10px;line-height:1.8;color:#88967c;margin:0 0 24px;padding-bottom:17px;border-bottom:1px solid #e1e7d9}
+.knowledge-card blockquote{font:400 21px/1.9 LocalSong,'Songti SC',serif;color:#586c46;margin:0 0 12px;letter-spacing:.06em}
+.knowledge-card h4{font:400 18px/1.7 LocalSong,'Songti SC',serif;margin:0 0 10px;color:#425a3c}
+.knowledge-card .knowledge-meta{font-size:10px;line-height:1.9;color:#8b967f;margin:0 0 17px}
+.knowledge-body{font-size:13px;line-height:2;color:#637357;margin:0 0 20px}
+.knowledge-reading{border-left:2px solid #c6d2b7;padding-left:12px;margin:8px 0 24px}
+.knowledge-reading>span{font-size:10px;font-weight:600;color:#62784f;letter-spacing:.05em}
+.knowledge-reading>p{font-size:12px;line-height:1.95;margin:7px 0 0;color:#7b886f}
+.knowledge-source{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:auto;padding-top:15px;border-top:1px solid #dfe6d5;font-size:12px;color:#5b7248;line-height:1.7}
+.knowledge-source:hover{color:#344b38}.knowledge-source>span{font-size:16px}
+.knowledge-footnote{font-size:9px;line-height:1.9;color:#8a977d;margin:19px 0 0}
+@media(max-width:1179px){.knowledge{padding:28px}.knowledge-grid{grid-template-columns:1fr 1fr}.knowledge-card.poetry{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:0 30px}.poetry .knowledge-card-label,.poetry h3,.poetry .knowledge-question,.poetry blockquote,.poetry .knowledge-meta{grid-column:1}.poetry .knowledge-reading{grid-column:2;grid-row:2/6;align-self:center}.poetry .knowledge-source{grid-column:1/-1}.knowledge-card{padding:23px}}
+@media(max-width:720px){.knowledge{margin-top:42px;padding:25px 18px 20px;margin-inline:-6.8%}.knowledge-heading{gap:12px;margin-bottom:23px}.knowledge-heading h2{font-size:28px}.knowledge-heading p{font-size:11px}.knowledge-kicker{font-size:8px;letter-spacing:.08em}.knowledge-chapter{font-size:8px}.knowledge-chapter b{font-size:36px}.knowledge-grid{grid-template-columns:1fr;gap:14px}.knowledge-card,.knowledge-card.poetry{display:flex;padding:23px 21px}.knowledge-card h3{font-size:23px;margin-top:13px}.knowledge-card blockquote{font-size:22px}.knowledge-question{margin-bottom:20px}.knowledge-body{font-size:13px}.knowledge-reading>p{font-size:12px}.knowledge-source{font-size:12px}.knowledge-footnote{font-size:9px}}
+
+/* The illustrated archive has its own generous image-and-reading row. */
+.knowledge-grid{grid-template-columns:1fr 1fr}
+.knowledge-card.poetry{display:flex;grid-column:auto}
+.artwork-card{grid-column:1/-1}
+.artwork-content{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px;align-items:start}
+.artwork-figure{margin:0;min-width:0}
+.artwork-image-link{position:relative;display:block;background:#eeeade;border:1px solid #e0ddcf;padding:12px;text-align:center}
+.artwork-image-link img{display:block;width:100%;height:280px;object-fit:contain}
+.artwork-image-link>span{position:absolute;right:18px;bottom:18px;background:#fafbf4eb;color:#5c6f4b;padding:5px 9px;font-size:10px;border:1px solid #d6ddcc}
+.artwork-image-link:hover{border-color:#aab894}
+.artwork-figure figcaption{font-size:9px;line-height:1.9;margin-top:10px;color:#8a927d;overflow-wrap:anywhere}
+.artwork-figure figcaption a{color:#71815e;border-bottom:1px solid #cbd4bf}
+.artwork-figure figcaption span{display:block;margin-top:3px}
+.artwork-description{display:flex;flex-direction:column;align-self:stretch;min-width:0;padding:8px 0 0}
+@media(max-width:1179px){.knowledge-card.poetry{display:flex;grid-column:auto}.artwork-content{gap:24px}.artwork-image-link img{height:250px}}
+@media(max-width:720px){.knowledge-grid{grid-template-columns:1fr}.artwork-content{grid-template-columns:1fr;gap:22px}.artwork-image-link img{height:245px}.artwork-card{grid-column:auto}.artwork-figure figcaption{font-size:10px}.artwork-description{padding:0}}
+
+/* Text-only flower selection shares the exhibition's active flower. */
+.knowledge-flowers{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 28px;padding-bottom:24px;border-bottom:1px solid #d5dfca}
+.knowledge-flowers button{min-height:44px;min-width:64px;padding:8px 18px;border:1px solid #cdd8c2;background:#f8faf4;color:#627653;font:400 16px LocalSong,'Songti SC',serif;cursor:pointer;transition:background .15s,color .15s}
+.knowledge-flowers button:hover{background:#dce6d3}
+.knowledge-flowers button.active{background:#637b51;border-color:#637b51;color:#fff}
+.knowledge-flowers button:focus-visible{outline:2px solid #435c35;outline-offset:3px}
+@media(max-width:720px){.knowledge-flowers{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin-bottom:22px;padding-bottom:20px}.knowledge-flowers button{min-width:0;padding:8px 4px;font-size:15px}}
+
+/* Stay available while reading this chapter, bounded by the knowledge section. */
+.knowledge-flowers{position:sticky;top:0;z-index:12;padding-top:12px;padding-bottom:12px;background:#eaf0e5;box-shadow:0 5px 10px -8px #455b3b66}
+@media(max-width:720px){.knowledge-flowers{top:0;padding-top:10px;padding-bottom:10px}}

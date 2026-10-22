@@ -1,0 +1,7 @@
+.flower-cursor{position:fixed;left:0;top:0;width:30px;height:30px;z-index:50;pointer-events:none;opacity:0;filter:drop-shadow(0 1px 1px #4b55352b)}
+.flower-cursor svg{width:100%;height:100%;display:block}
+@media(hover:hover) and (pointer:fine){.flower-cursor.visible{opacity:.88}}
+@media(forced-colors:active){.flower-cursor{display:none}}
+
+.flower-cursor{width:32px;height:32px;mix-blend-mode:multiply;filter:none}
+.flower-cursor img{display:block;width:100%;height:100%;object-fit:contain;border-radius:50%}

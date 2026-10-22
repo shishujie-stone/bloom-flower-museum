@@ -1,0 +1,24 @@
+.catalog{padding:30px 0 0}
+.catalog-head{display:flex;align-items:center;gap:18px;margin-bottom:15px}
+.catalog-head h2{margin:0;font-family:LocalSong,'Songti SC',serif;font-weight:400;font-size:16px;letter-spacing:.14em}
+.catalog-head>span{font-size:10px;letter-spacing:.08em;color:#8a967d}
+.catalog-head .catalog-hint{margin-left:auto;font-size:9px}
+.flower-gallery{display:flex;gap:10px;overflow-x:auto;overscroll-behavior-x:contain;padding:3px 3px 13px;scrollbar-width:thin;scrollbar-color:#cad1bc transparent;scroll-snap-type:x proximity}
+.flower-gallery button{flex:1 0 70px;min-width:70px;padding:6px 6px 10px;background:#ffffff80;border:1px solid transparent;border-radius:3px;transition:border-color .2s,background .2s;scroll-snap-align:center}
+.flower-gallery button>img{display:block;width:100%;max-height:76px;object-fit:contain;aspect-ratio:1;background:#fff;margin:0 auto 8px}
+.flower-gallery button>span{display:block;font-family:LocalSong,'Songti SC',serif;font-size:13px;letter-spacing:.12em;text-align:center;color:#78856b}
+.flower-gallery button:hover{background:#fff;border-color:#dfe5d5}
+.flower-gallery button.active{background:#fff;border-color:#9caa88;box-shadow:0 2px 0 #b6c1a0}
+.flower-gallery button.active>span{color:#344b38}
+.intro{padding-top:29px}
+.heritage{display:grid;grid-template-columns:1fr 1fr;gap:65px;padding:35px 0 42px;border-top:1px solid #dfe4d6}
+.heritage article{min-width:0}
+.heritage h3{font-family:LocalSong,'Songti SC',serif;font-weight:400;font-size:19px;line-height:1.7;letter-spacing:.04em;margin:15px 0 9px}
+.heritage p{font-size:11px;color:#7e8c70;line-height:2.1;margin:8px 0 18px;max-width:420px}
+.heritage a{font-size:10px;color:#6e7e59;border-bottom:1px solid #c5d0b5;padding-bottom:3px}
+.heritage .museum{font-size:10px;color:#9ba58e}
+.credit{overflow-wrap:anywhere}
+.reference-caption{line-height:1.9}
+.branch-button>img{max-width:520px}
+@media(max-width:1050px){.flower-gallery{gap:7px}.flower-gallery button{flex-basis:70px}.heritage{gap:30px}.flower-gallery button>img{max-height:62px}}
+@media(max-width:720px){.catalog{padding-top:25px}.catalog-head{gap:11px;margin-bottom:12px}.catalog-head h2{font-size:15px}.catalog-head .catalog-hint{font-size:8px;letter-spacing:0}.flower-gallery{gap:8px;margin-right:-6.8%;padding-right:22px}.flower-gallery button{flex:0 0 70px}.flower-gallery button>img{height:55px;max-height:none}.intro{padding-top:20px}.heritage{grid-template-columns:1fr;gap:29px;padding:28px 0 35px}.heritage article+article{padding-top:24px;border-top:1px solid #e4e8dc}.heritage h3{font-size:19px}.heritage p{font-size:12px}.heritage a{font-size:11px}}

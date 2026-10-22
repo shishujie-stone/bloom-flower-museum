@@ -1,0 +1,29 @@
+export const MUSIC_TRACKS = [
+  {
+    "id": "wuxia2-guzheng-pipa",
+    "title": "Wuxia2 · 古筝与琵琶",
+    "originalTitle": "Wuxia2 (Guzheng＆Pipa)",
+    "artist": "PeriTune / Sei Mutsuki",
+    "instruments": [
+      "古筝",
+      "琵琶"
+    ],
+    "durationSeconds": 256.130583,
+    "src": "assets/audio/wuxia2-guzheng-pipa.mp3",
+    "sourceUrl": "https://peritune.com/blog/2018/10/13/wuxia2/",
+    "downloadUrl": "https://peritune.com/music/PerituneMaterial_Wuxia2_Guzheng_Pipa.mp3",
+    "artistUrl": "https://peritune.com/",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "licenseVerificationUrl": "https://peritune.com/about/",
+    "licenseContinuityUrl": "https://peritune.com/blog/2026/03/01/terms-update/",
+    "publicationDate": "2018-10-13",
+    "attribution": "Wuxia2 (Guzheng＆Pipa) by PeriTune (peritune.com), licensed under CC BY 4.0.",
+    "modifications": "未修改作者官网下载的 MP3；网页音量调节与循环播放。",
+    "format": "audio/mpeg",
+    "selectionNote": "作者为古筝与琵琶另行提供的103BPM版本，区别于135BPM交响版本；现代原创中式器乐配乐，不标为历史古曲或真人实录。",
+    "verificationNote": "作者原曲页面明确标注CC BY4.0；官网2026年3月规则变更保留2026年2月及以前作品的CC BY4.0许可。",
+    "bytes": 6147760,
+    "sha256": "74277b4db3ee1332188d78dec9fd52a0507ad3cdd49f88f9868e91d39eb5846b"
+  }
+];
