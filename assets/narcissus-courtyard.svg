@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700" viewBox="0 0 1000 700" preserveAspectRatio="none">
+<defs><filter id="soft"><feGaussianBlur stdDeviation="7"/></filter><filter id="leaves"><feGaussianBlur stdDeviation="13"/></filter></defs>
+<!-- A soft window shadow stays at the edge, away from the specimen. -->
+<g fill="none" stroke="#768b72" opacity=".07" stroke-width="12" filter="url(#soft)" transform="translate(-70,-150) rotate(-17 210 240)">
+<path d="M0 0H360V460H0Z M120 0V460 M240 0V460 M0 150H360 M0 300H360"/>
+</g>
+<g fill="#829571" opacity=".09" filter="url(#leaves)">
+<ellipse cx="25" cy="570" rx="22" ry="136" transform="rotate(-28 25 570)"/>
+<ellipse cx="52" cy="680" rx="28" ry="166" transform="rotate(17 52 680)"/>
+<ellipse cx="978" cy="245" rx="20" ry="125" transform="rotate(31 978 245)"/>
+<ellipse cx="1008" cy="403" rx="28" ry="152" transform="rotate(-23 1008 403)"/>
+</g></svg>
